@@ -11,12 +11,16 @@
 </div>
 <div>
     <h3>Content</h3>
-    <p><?php echo $this->_filterProvider->getPageFilter()->filter($singleData->getContent()); ?></p>
+    <?php if ($block->getFilterProvider() && $block->getFilterProvider()->getPageFilter()): ?>
+        <p><?php echo $block->getFilterProvider()->getPageFilter()->filter($singleData->getContent()); ?></p>
+    <?php else: ?>
+        <p><?php echo $singleData->getContent(); ?></p>
+    <?php endif; ?>
 </div>
 <div>
 	<h3>Image</h3>
 	<?php if($singleData->getImage()): ?>
-        <img width="400" height="300" src="<?php echo $block->getUrl('pub/media/'.$singleData->getImage(), ['_secure' => true]); ?>">
+        <img width="400" height="300" src="<?php echo $block->escapeUrl($block->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'media/' . ltrim($singleData->getImage(), '/')); ?>" alt="<?php echo $block->escapeHtml($singleData->getTitle()); ?>">
     <?php else: ?>
         <p>No Image</p>
     <?php endif; ?>

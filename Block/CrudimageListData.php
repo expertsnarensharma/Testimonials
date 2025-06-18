@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Block;
+namespace KiwiCommerce\Testimonials\Block;
 
 use Magento\Framework\View\Element\Template\Context;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 use Magento\Framework\Data\Collection\AbstractDb;
 use Magento\Framework\View\Element\Template;
 
@@ -33,13 +33,13 @@ class CrudimageListData extends Template
      */
     protected function _prepareLayout(): self
     {
-        $this->pageConfig->getTitle()->set(__('Biren Crudimage Module List Page'));
+        $this->pageConfig->getTitle()->set(__('KiwiCommerce Crudimage Module List Page'));
 
         $collection = $this->getCrudimageCollection();
         if ($collection) {
             $pager = $this->getLayout()->createBlock(
                 \Magento\Theme\Block\Html\Pager::class,
-                'biren.crudimage.pager'
+                'kiwicommerce.crudimage.pager'
             )->setAvailableLimit([5 => 5, 10 => 10, 15 => 15])
              ->setShowPerPage(true)
              ->setCollection($collection);

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml\Items;
 
-class Index extends \Biren\Crudimage\Controller\Adminhtml\Items
+class Index extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
 {
     /**
      * Items list.
@@ -15,7 +15,7 @@ class Index extends \Biren\Crudimage\Controller\Adminhtml\Items
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Biren_Crudimage::test');
+        $resultPage->setActiveMenu('KiwiCommerce_Testimonials::test');
         $resultPage->getConfig()->getTitle()->prepend(__('Test Items'));
         $resultPage->addBreadcrumb(__('Test'), __('Test'));
         $resultPage->addBreadcrumb(__('Items'), __('Items'));

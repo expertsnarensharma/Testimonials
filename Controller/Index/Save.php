@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Index;
+namespace KiwiCommerce\Testimonials\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Action\HttpPostActionInterface;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\MediaStorage\Model\File\UploaderFactory;
 use Magento\Framework\Image\AdapterFactory;
@@ -48,14 +48,14 @@ class Save extends Action implements HttpPostActionInterface
                 $uploader->setAllowRenameFiles(true);
                 $uploader->setFilesDispersion(true);
                 $mediaDirectory = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA);
-                $destinationPath = $mediaDirectory->getAbsolutePath('biren/crudimage');
+                $destinationPath = $mediaDirectory->getAbsolutePath('kiwicommerce/testimonials');
                 $result = $uploader->save($destinationPath);
                 if (!$result) {
                     throw new LocalizedException(
                         __('File cannot be saved to path: %1', $destinationPath)
                     );
                 }
-                $imagePath = 'biren/crudimage' . $result['file'];
+                $imagePath = 'kiwicommerce/testimonials' . $result['file'];
                 $data['image'] = $imagePath;
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage(__('Image upload failed: %1', $e->getMessage()));

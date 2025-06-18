@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Api;
+namespace KiwiCommerce\Testimonials\Api;
 
-use Biren\Crudimage\Api\Data\ItemInterface;
+use KiwiCommerce\Testimonials\Api\Data\ItemInterface;
 
 interface ItemsRepositoryInterface
 {
@@ -12,7 +12,7 @@ interface ItemsRepositoryInterface
      * Get item by ID
      *
      * @param int $id
-     * @return \Biren\Crudimage\Api\Data\ItemInterface
+     * @return \KiwiCommerce\Testimonials\Api\Data\ItemInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getById(int $id): ItemInterface;

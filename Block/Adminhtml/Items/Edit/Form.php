@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Block\Adminhtml\Items\Edit;
+namespace KiwiCommerce\Testimonials\Block\Adminhtml\Items\Edit;
 
 use Magento\Backend\Block\Widget\Form\Generic;
 use Magento\Framework\Data\Form as MagentoForm;
@@ -33,7 +33,7 @@ class Form extends Generic
             [
                 'data' => [
                     'id' => 'edit_form',
-                    'action' => $this->getUrl('biren_crudimage/items/save'),
+                    'action' => $this->getUrl('kiwicommerce_testimonials/items/save'),
                     'method' => 'post',
                     'enctype' => 'multipart/form-data'
                 ],

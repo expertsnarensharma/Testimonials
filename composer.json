@@ -1,6 +1,6 @@
 {
-    "name": "biren/magento2-crud-module",
-    "description": "Crud module using composer!",
+    "name": "kiwicommerce/magento2-testimonials-module",
+    "description": "Testimonials module using composer!",
     "require": {
         "php": "^8.1 || ^8.2",
         "magento/framework": "103.0.*"
@@ -12,12 +12,12 @@
             "registration.php"
         ],
         "psr-4": {
-            "Biren\\Crudimage\\": ""
+            "KiwiCommerce\\Testimonials\\": ""
         }
     },
     "authors": [
         {
-            "name": "Biren Patel",
+            "name": "Narendra Sharma",
             "role": "Developer"
         }
     ]

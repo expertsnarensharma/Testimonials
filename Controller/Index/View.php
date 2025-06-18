@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Index;
+namespace KiwiCommerce\Testimonials\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Exception\NotFoundException;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 
 class View extends Action implements HttpGetActionInterface
 {

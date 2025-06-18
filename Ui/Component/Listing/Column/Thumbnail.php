@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Ui\Component\Listing\Column;
+namespace KiwiCommerce\Testimonials\Ui\Component\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
@@ -52,8 +52,8 @@ class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
                     $item[$fieldName . '_alt'] = $item['title'] ?? '';
                     $item[$fieldName . '_orig_src'] = $path . $item['image'];
                 } else {
-                    // please place your placeholder image at pub/media/biren/crudimage/placeholder/placeholder.jpg
-                    $placeholder = 'biren/crudimage/placeholder/placeholder.jpg';
+                    // please place your placeholder image at pub/media/kiwicommerce/testimonials/placeholder/placeholder.jpg
+                    $placeholder = 'kiwicommerce/testimonials/placeholder/placeholder.jpg';
                     $item[$fieldName . '_src'] = $path . $placeholder;
                     $item[$fieldName . '_alt'] = 'Place Holder';
                     $item[$fieldName . '_orig_src'] = $path . $placeholder;

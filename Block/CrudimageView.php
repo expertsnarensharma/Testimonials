@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Block;
+namespace KiwiCommerce\Testimonials\Block;
 
 use Magento\Framework\View\Element\Template\Context;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 use Magento\Cms\Model\Template\FilterProvider;
 use Magento\Framework\View\Element\Template;
 
@@ -40,14 +40,14 @@ class CrudimageView extends Template
      */
     protected function _prepareLayout(): self
     {
-        $this->pageConfig->getTitle()->set(__('Biren Crudimage Module View Page'));
+        $this->pageConfig->getTitle()->set(__('KiwiCommerce Crudimage Module View Page'));
         return parent::_prepareLayout();
     }
 
     /**
-     * @return \Biren\Crudimage\Model\Crudimage|false
+     * @return \KiwiCommerce\Testimonials\Model\Crudimage|false
      */
-    public function getSingleData(): \Biren\Crudimage\Model\Crudimage|false
+    public function getSingleData(): \KiwiCommerce\Testimonials\Model\Crudimage|false
     {
         $id = (int) $this->getRequest()->getParam('id');
         $crudimage = $this->_crudimage->create();

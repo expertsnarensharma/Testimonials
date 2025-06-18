@@ -1,6 +1,6 @@
 <?php
 
-namespace Biren\Crudimage\Block\Adminhtml\Items\Edit\Tab;
+namespace KiwiCommerce\Testimonials\Block\Adminhtml\Items\Edit\Tab;
 
 use Magento\Backend\Block\Widget\Form\Generic;
 use Magento\Backend\Block\Widget\Tab\TabInterface;
@@ -62,7 +62,7 @@ class Main extends Generic implements TabInterface
      */
     protected function _prepareForm()
     {
-        $model = $this->_coreRegistry->registry('current_biren_crudimage_items');
+        $model = $this->_coreRegistry->registry('current_kiwicommerce_testimonials_items');
         /** @var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create();
         $form->setHtmlIdPrefix('item_');

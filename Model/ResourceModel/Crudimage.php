@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Model\ResourceModel;
+namespace KiwiCommerce\Testimonials\Model\ResourceModel;
 
 class Crudimage extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
@@ -11,6 +11,6 @@ class Crudimage extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct(): void
     {
-        $this->_init('biren_crudimage', 'crudimage_id'); // "biren_crudimage" is table name, "crudimage_id" is the primary key
+        $this->_init('kiwicommerce_testimonials', 'crudimage_id'); // "kiwicommerce_testimonials" is table name, "crudimage_id" is the primary key
     }
 }

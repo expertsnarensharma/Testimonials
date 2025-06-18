@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Block\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Block\Adminhtml\Items;
 
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\Registry;
@@ -42,7 +42,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     {
         $this->_objectId = 'id';
         $this->_controller = 'adminhtml_items';
-        $this->_blockGroup = 'Biren_Crudimage';
+        $this->_blockGroup = 'KiwiCommerce_Testimonials';
 
         parent::_construct();
 
@@ -66,7 +66,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
      */
     public function getHeaderText(): Phrase
     {
-        $item = $this->_coreRegistry->registry('current_biren_crudimage_items');
+        $item = $this->_coreRegistry->registry('current_kiwicommerce_testimonials_items');
         if ($item && $item->getId()) {
             return __("Edit Item '%1'", $this->escapeHtml($item->getName()));
         }

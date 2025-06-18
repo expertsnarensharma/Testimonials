@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Model\ResourceModel\Crudimage;
+namespace KiwiCommerce\Testimonials\Model\ResourceModel\Crudimage;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -14,8 +14,8 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected function _construct(): void
     {
         $this->_init(
-            \Biren\Crudimage\Model\Crudimage::class,
-            \Biren\Crudimage\Model\ResourceModel\Crudimage::class
+            \KiwiCommerce\Testimonials\Model\Crudimage::class,
+            \KiwiCommerce\Testimonials\Model\ResourceModel\Crudimage::class
         );
     }
 }

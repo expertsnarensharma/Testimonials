@@ -1,4 +1,4 @@
-# Biren_Crudimage Magento 2 Module
+# KiwiCommerce_Testimonials Magento 2 Module
 
 A Magento 2 CRUD example module, compatible with Magento 2.4.8-p1 and PHP 8.2.
 
@@ -11,7 +11,7 @@ A Magento 2 CRUD example module, compatible with Magento 2.4.8-p1 and PHP 8.2.
 
 ### Option 1: Copy to app/code
 
-1. Copy the module to `app/code/Biren/Crudimage`.
+1. Copy the module to `app/code/KiwiCommerce/Testimonials`.
 2. Run:
     ```bash
     php bin/magento setup:upgrade
@@ -26,17 +26,17 @@ A Magento 2 CRUD example module, compatible with Magento 2.4.8-p1 and PHP 8.2.
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/birenk/magento2-crud-module"
+            "url": "https://github.com/expertsnarensharma/Testimonials.git"
         }
     ],
     ```
 2. Require the module:
     ```bash
-    composer require biren/magento2-crud-module
+    composer require kiwicommerce/magento2-testimonials-module
     ```
 3. Enable the module:
     ```bash
-    php bin/magento module:enable Biren_Crudimage
+    php bin/magento module:enable KiwiCommerce_Testimonials
     php bin/magento setup:upgrade
     php bin/magento setup:di:compile
     php bin/magento cache:flush
@@ -46,7 +46,7 @@ A Magento 2 CRUD example module, compatible with Magento 2.4.8-p1 and PHP 8.2.
 
 If not already enabled, add to `app/etc/config.php` under the 'modules' section:
 ```php
-'Biren_Crudimage' => 1,
+'KiwiCommerce_Testimonials' => 1,
 ```
 
 ## Clear Cache

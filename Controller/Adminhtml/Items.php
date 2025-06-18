@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -50,12 +50,12 @@ abstract class Items extends Action
     protected function _initAction(): static
     {
         $this->_view->loadLayout();
-        $this->_setActiveMenu('Biren_Crudimage::items')->_addBreadcrumb(__('Items'), __('Items'));
+        $this->_setActiveMenu('KiwiCommerce_Testimonials::items')->_addBreadcrumb(__('Items'), __('Items'));
         return $this;
     }
 
     protected function _isAllowed(): bool
     {
-        return $this->_authorization->isAllowed('Biren_Crudimage::items');
+        return $this->_authorization->isAllowed('KiwiCommerce_Testimonials::items');
     }
 }
