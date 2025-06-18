@@ -40,7 +40,7 @@ class CrudimageView extends Template
      */
     protected function _prepareLayout(): self
     {
-        $this->pageConfig->getTitle()->set(__('KiwiCommerce Crudimage Module View Page'));
+        $this->pageConfig->getTitle()->set(__('KiwiCommerce Testimonial Module View Page'));
         return parent::_prepareLayout();
     }
 
@@ -52,7 +52,7 @@ class CrudimageView extends Template
         $id = (int) $this->getRequest()->getParam('id');
         $crudimage = $this->_crudimage->create();
         $singleData = $crudimage->load($id);
-        if ($singleData->getCrudimageId() && (int)$singleData->getStatus() === 1) {
+        if ($singleData->getTestimonialId() && (int)$singleData->getStatus() === 1) {
             return $singleData;
         }
         return false;

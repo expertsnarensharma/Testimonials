@@ -49,13 +49,13 @@ class CrudimageActions extends \Magento\Ui\Component\Listing\Columns\Column
     {
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
-                if (isset($item['crudimage_id'])) {
+                if (isset($item['testimonial_id'])) {
                     $item[$this->getData('name')] = [
                         'edit' => [
                             'href' => $this->_urlBuilder->getUrl(
                                 self::URL_PATH_EDIT,
                                 [
-                                    'id' => $item['crudimage_id']
+                                    'id' => $item['testimonial_id']
                                 ]
                             ),
                             'label' => __('Edit')

@@ -20,14 +20,14 @@
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">KiwiCommerceCrudimageGridDataProvider</argument>
             <argument name="name" xsi:type="string">kiwicommerce_testimonials_index_listing_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">crudimage_id</argument>
-            <argument name="requestFieldName" xsi:type="string">crudimage_id</argument>
+            <argument name="primaryFieldName" xsi:type="string">testimonial_id</argument>
+            <argument name="requestFieldName" xsi:type="string">testimonial_id</argument>
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
 					<item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
 					<item name="update_url" xsi:type="url" path="mui/index/render"/>
 					<item name="storageConfig" xsi:type="array">
-						<item name="indexField" xsi:type="string">crudimage_id</item>
+						<item name="indexField" xsi:type="string">testimonial_id</item>
 					</item>
 				</item>
 			</argument>
@@ -170,50 +170,70 @@
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">crudimage_id</item>
+                    <item name="indexField" xsi:type="string">testimonial_id</item>
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="crudimage_id">
+        <column name="testimonial_id">
             <argument name="data" xsi:type="array">
                 <item name="js_config" xsi:type="array">
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/column</item>
                 </item>
                 <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">crudimage_id</item>
+                    <item name="indexField" xsi:type="string">testimonial_id</item>
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="sorting" xsi:type="string">desc</item>
                     <item name="label" xsi:type="string" translate="true">ID</item>
                 </item>
             </argument>
         </column>
-        <column name="title">
+        <column name="company_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="label" xsi:type="string" translate="true">Company</item>
                     <item name="sortOrder" xsi:type="number">10</item>
                     <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
                 </item>
             </argument>
         </column>
-        <column name="author">
+        <column name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Author</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
                     <item name="sortOrder" xsi:type="number">20</item>
                     <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
                 </item>
             </argument>
         </column>
-        <column name="image" class="KiwiCommerce\Testimonials\Ui\Component\Listing\Column\Thumbnail">
+        <column name="message">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Message</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                </item>
+            </argument>
+        </column>
+        <column name="post">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Post</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                </item>
+            </argument>
+        </column>
+        <column name="profile_pic" class="KiwiCommerce\Testimonials\Ui\Component\Listing\Column\Thumbnail">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>
                     <item name="sortable" xsi:type="boolean">false</item>
                     <item name="has_preview" xsi:type="string">1</item>                    
-                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="label" xsi:type="string" translate="true">Profile Pic</item>
                 </item>
             </argument>
         </column>
@@ -233,7 +253,7 @@
         <actionsColumn name="actions" class="KiwiCommerce\Testimonials\Ui\Component\Listing\Column\CrudimageActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">crudimage_id</item>
+                    <item name="indexField" xsi:type="string">testimonial_id</item>
                     <item name="urlEntityParamName" xsi:type="string">id</item>
                 </item>
             </argument>

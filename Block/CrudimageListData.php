@@ -33,7 +33,7 @@ class CrudimageListData extends Template
      */
     protected function _prepareLayout(): self
     {
-        $this->pageConfig->getTitle()->set(__('KiwiCommerce Crudimage Module List Page'));
+        $this->pageConfig->getTitle()->set(__('KiwiCommerce Testimonial Module List Page'));
 
         $collection = $this->getCrudimageCollection();
         if ($collection) {

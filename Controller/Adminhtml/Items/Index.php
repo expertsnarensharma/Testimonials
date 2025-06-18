@@ -16,8 +16,8 @@ class Index extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('KiwiCommerce_Testimonials::test');
-        $resultPage->getConfig()->getTitle()->prepend(__('Test Items'));
-        $resultPage->addBreadcrumb(__('Test'), __('Test'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Testimonial Items'));
+        $resultPage->addBreadcrumb(__('Testimonial'), __('Testimonial'));
         $resultPage->addBreadcrumb(__('Items'), __('Items'));
         return $resultPage;
     }
