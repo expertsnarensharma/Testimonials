@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Setup;
+namespace KiwiCommerce\Testimonials\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -24,10 +24,10 @@ class InstallSchema implements InstallSchemaInterface
         $installer->startSetup();
 
         /**
-         * Creating table biren_crudimage
+         * Creating table kiwicommerce_testimonials
          */
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('biren_crudimage')
+            $installer->getTable('kiwicommerce_testimonials')
         )->addColumn(
             'crudimage_id',
             Table::TYPE_INTEGER,
@@ -74,7 +74,7 @@ class InstallSchema implements InstallSchemaInterface
             ],
             'Created At'
         )->setComment(
-            'Biren Crudimage Table'
+            'KiwiCommerce Crudimage Table'
         );
         $installer->getConnection()->createTable($table);
         $installer->endSetup();

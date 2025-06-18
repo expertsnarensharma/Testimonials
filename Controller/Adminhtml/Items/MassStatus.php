@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml\Items;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Ui\Component\MassAction\Filter;
-use Biren\Crudimage\Model\ResourceModel\Crudimage\CollectionFactory;
+use KiwiCommerce\Testimonials\Model\ResourceModel\Crudimage\CollectionFactory;
 use Magento\Backend\Model\View\Result\Redirect;
 
 class MassStatus extends \Magento\Backend\App\Action

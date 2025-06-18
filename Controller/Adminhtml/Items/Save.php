@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml\Items;
 
 use Magento\Backend\App\Action\Context;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\LocalizedException;
@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 use Magento\Backend\Model\View\Result\ForwardFactory;
 use Magento\Framework\View\Result\PageFactory;
 
-class Save extends \Biren\Crudimage\Controller\Adminhtml\Items
+class Save extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
 {
     protected CrudimageFactory $crudimageFactory;
     protected UploaderFactory $uploaderFactory;
@@ -83,14 +83,14 @@ class Save extends \Biren\Crudimage\Controller\Adminhtml\Items
                         $uploader->setAllowRenameFiles(true);
                         $uploader->setFilesDispersion(true);
                         $mediaDirectory = $this->filesystem->getDirectoryRead($this->directoryList::MEDIA);
-                        $destinationPath = $mediaDirectory->getAbsolutePath('biren/crudimage');
+                        $destinationPath = $mediaDirectory->getAbsolutePath('kiwicommerce/testimonials');
                         $result = $uploader->save($destinationPath);
                         if (!$result) {
                             throw new LocalizedException(
                                 __('File cannot be saved to path: %1', $destinationPath)
                             );
                         }
-                        $imagePath = 'biren/crudimage' . $result['file'];
+                        $imagePath = 'kiwicommerce/testimonials' . $result['file'];
                         $data['image'] = $imagePath;
                     } catch (\Exception $e) {
                         // Optionally log or handle upload errors
@@ -127,16 +127,16 @@ class Save extends \Biren\Crudimage\Controller\Adminhtml\Items
                 $this->backendSession->setPageData(false);
 
                 if ($this->getRequest()->getParam('back')) {
-                    return $resultRedirect->setPath('biren_crudimage/*/edit', ['id' => $model->getId()]);
+                    return $resultRedirect->setPath('kiwicommerce_testimonials/*/edit', ['id' => $model->getId()]);
                 }
-                return $resultRedirect->setPath('biren_crudimage/*/');
+                return $resultRedirect->setPath('kiwicommerce_testimonials/*/');
             } catch (LocalizedException $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
                 $id = (int)$this->getRequest()->getParam('id');
                 if (!empty($id)) {
-                    return $resultRedirect->setPath('biren_crudimage/*/edit', ['id' => $id]);
+                    return $resultRedirect->setPath('kiwicommerce_testimonials/*/edit', ['id' => $id]);
                 } else {
-                    return $resultRedirect->setPath('biren_crudimage/*/new');
+                    return $resultRedirect->setPath('kiwicommerce_testimonials/*/new');
                 }
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage(
@@ -144,9 +144,9 @@ class Save extends \Biren\Crudimage\Controller\Adminhtml\Items
                 );
                 $this->logger->critical($e);
                 $this->backendSession->setPageData($data);
-                return $resultRedirect->setPath('biren_crudimage/*/edit', ['id' => $this->getRequest()->getParam('id')]);
+                return $resultRedirect->setPath('kiwicommerce_testimonials/*/edit', ['id' => $this->getRequest()->getParam('id')]);
             }
         }
-        return $resultRedirect->setPath('biren_crudimage/*/');
+        return $resultRedirect->setPath('kiwicommerce_testimonials/*/');
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Ui\Component\Listing\Column;
+namespace KiwiCommerce\Testimonials\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
@@ -10,7 +10,7 @@ use Magento\Framework\View\Element\UiComponentFactory;
 
 class CrudimageActions extends \Magento\Ui\Component\Listing\Columns\Column
 {
-    public const URL_PATH_EDIT = 'biren_crudimage/items/edit';
+    public const URL_PATH_EDIT = 'kiwicommerce_testimonials/items/edit';
 
     /**
      * URL builder

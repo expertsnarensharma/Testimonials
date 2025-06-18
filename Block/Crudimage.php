@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Block;
+namespace KiwiCommerce\Testimonials\Block;
 
 /**
  * Crudimage content block
@@ -17,7 +17,7 @@ class Crudimage extends \Magento\Framework\View\Element\Template
 
     protected function _prepareLayout(): \Magento\Framework\View\Element\Template
     {
-        $this->pageConfig->getTitle()->set(__('Biren Crudimage Module'));
+        $this->pageConfig->getTitle()->set(__('KiwiCommerce Crudimage Module'));
         return parent::_prepareLayout();
     }
 }

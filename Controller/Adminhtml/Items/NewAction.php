@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml\Items;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\ForwardFactory;
@@ -14,7 +14,7 @@ use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Driver\File;
 use Magento\Framework\Controller\ResultInterface;
 
-class NewAction extends \Biren\Crudimage\Controller\Adminhtml\Items
+class NewAction extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
 {
     public function __construct(
         Context $context,

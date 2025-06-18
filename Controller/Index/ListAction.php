@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Index;
+namespace KiwiCommerce\Testimonials\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;

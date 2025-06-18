@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml\Items;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
@@ -16,14 +16,14 @@ use Magento\Framework\Filesystem\Driver\File;
 use Magento\Framework\Stdlib\DateTime\Filter\Date;
 use Magento\Framework\Filter\FilterManager;
 use Magento\Framework\App\Response\Http\FileFactory;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 use Magento\Framework\Registry;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Message\ManagerInterface;
 use Magento\Backend\Model\Session;
 use Magento\Framework\View\Result\Page;
 
-class Edit extends \Biren\Crudimage\Controller\Adminhtml\Items
+class Edit extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
 {
     protected DataPersistorInterface $dataPersistor;
     protected CrudimageFactory $crudimageFactory;
@@ -79,7 +79,7 @@ class Edit extends \Biren\Crudimage\Controller\Adminhtml\Items
                 $this->messageManager->addErrorMessage(__('This item no longer exists.'));
                 /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
-                return $resultRedirect->setPath('biren_crudimage/*');
+                return $resultRedirect->setPath('kiwicommerce_testimonials/*');
             }
         }
 
@@ -90,7 +90,7 @@ class Edit extends \Biren\Crudimage\Controller\Adminhtml\Items
         }
 
         // Register model for use in blocks
-        $this->coreRegistry->register('current_biren_crudimage_items', $model);
+        $this->coreRegistry->register('current_kiwicommerce_testimonials_items', $model);
 
         /** @var Page $resultPage */
         $resultPage = $this->resultPageFactory->create();

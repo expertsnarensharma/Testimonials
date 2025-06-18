@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Controller\Adminhtml\Items;
+namespace KiwiCommerce\Testimonials\Controller\Adminhtml\Items;
 
 use Magento\Backend\App\Action\Context;
-use Biren\Crudimage\Model\CrudimageFactory;
+use KiwiCommerce\Testimonials\Model\CrudimageFactory;
 use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Exception\LocalizedException;
 use Psr\Log\LoggerInterface;
 use Magento\Backend\Model\View\Result\ForwardFactory;
 
-class Delete extends \Biren\Crudimage\Controller\Adminhtml\Items
+class Delete extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
 {
     protected CrudimageFactory $crudimageFactory;
     protected LoggerInterface $logger;

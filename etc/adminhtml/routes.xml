@@ -2,8 +2,8 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="biren_crudimage" frontName="biren_crudimage">
-            <module name="Biren_Crudimage"/>
+        <route id="kiwicommerce_testimonials" frontName="kiwicommerce_testimonials">
+            <module name="KiwiCommerce_Testimonials"/>
         </route>
     </router>
 </config>

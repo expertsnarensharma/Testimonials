@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Model;
+namespace KiwiCommerce\Testimonials\Model;
 
 use Magento\Framework\Model\AbstractModel;
 
@@ -13,6 +13,6 @@ class Crudimage extends AbstractModel
      */
     protected function _construct(): void
     {
-        $this->_init(\Biren\Crudimage\Model\ResourceModel\Crudimage::class);
+        $this->_init(\KiwiCommerce\Testimonials\Model\ResourceModel\Crudimage::class);
     }
 }

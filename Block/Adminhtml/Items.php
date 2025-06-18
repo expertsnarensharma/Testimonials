@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biren\Crudimage\Block\Adminhtml;
+namespace KiwiCommerce\Testimonials\Block\Adminhtml;
 
 class Items extends \Magento\Backend\Block\Widget\Grid\Container
 {
