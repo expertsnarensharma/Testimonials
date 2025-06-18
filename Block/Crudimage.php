@@ -17,7 +17,7 @@ class Crudimage extends \Magento\Framework\View\Element\Template
 
     protected function _prepareLayout(): \Magento\Framework\View\Element\Template
     {
-        $this->pageConfig->getTitle()->set(__('KiwiCommerce Crudimage Module'));
+        $this->pageConfig->getTitle()->set(__('KiwiCommerce Testimonial Module'));
         return parent::_prepareLayout();
     }
 }

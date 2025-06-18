@@ -6,7 +6,7 @@ namespace KiwiCommerce\Testimonials\Model\ResourceModel\Crudimage;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
-    protected $_idFieldName = 'crudimage_id';
+    protected $_idFieldName = 'testimonial_id';
 
     /**
      * Define model & resource model

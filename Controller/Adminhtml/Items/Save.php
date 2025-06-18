@@ -70,13 +70,14 @@ class Save extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
 
         if ($this->getRequest()->getPostValue()) {
             $data = $this->getRequest()->getPostValue();
+
             try {
                 $model = $this->crudimageFactory->create();
 
                 // Handle image upload
-                if (isset($_FILES['image']['name']) && $_FILES['image']['name'] !== '') {
+                if (isset($_FILES['profile_pic']['name']) && $_FILES['profile_pic']['name'] !== '') {
                     try {
-                        $uploader = $this->uploaderFactory->create(['fileId' => 'image']);
+                        $uploader = $this->uploaderFactory->create(['fileId' => 'profile_pic']);
                         $uploader->setAllowedExtensions(['jpg', 'jpeg', 'gif', 'png']);
                         $imageAdapter = $this->adapterFactory->create();
                         $uploader->addValidateCallback('custom_image_upload', $imageAdapter, 'validateUploadFile');
@@ -91,25 +92,27 @@ class Save extends \KiwiCommerce\Testimonials\Controller\Adminhtml\Items
                             );
                         }
                         $imagePath = 'kiwicommerce/testimonials' . $result['file'];
-                        $data['image'] = $imagePath;
+                        $data['profile_pic'] = $imagePath;
+
+                        
                     } catch (\Exception $e) {
-                        // Optionally log or handle upload errors
+                        throw new LocalizedException(__('Image upload failed: %1', $e->getMessage()));
                     }
                 }
 
                 // Handle image deletion
-                if (isset($data['image']['delete']) && $data['image']['delete'] == 1) {
+                if (isset($data['profile_pic']['delete']) && $data['profile_pic']['delete'] == 1) {
                     $mediaDirectory = $this->filesystem->getDirectoryRead($this->directoryList::MEDIA)->getAbsolutePath();
-                    $file = $data['image']['value'];
+                    $file = $data['profile_pic']['value'];
                     $imgPath = $mediaDirectory . $file;
                     if ($this->file->isExists($imgPath)) {
                         $this->file->deleteFile($imgPath);
                     }
-                    $data['image'] = null;
+                    $data['profile_pic'] = null;
                 }
 
-                if (isset($data['image']['value'])) {
-                    $data['image'] = $data['image']['value'];
+                if (isset($data['profile_pic']['value'])) {
+                    $data['profile_pic'] = $data['profile_pic']['value'];
                 }
 
                 $id = $this->getRequest()->getParam('id');

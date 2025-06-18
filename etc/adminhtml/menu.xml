@@ -2,7 +2,7 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="kiwicommerce_testimonials::core" title="Testimonials" module="KiwiCommerce_Testimonials" sortOrder="90" resource="KiwiCommerce_Testimonials::sample"/>
-        <add id="kiwicommerce_testimonials::test" title="Items" module="KiwiCommerce_Testimonials" sortOrder="10" parent="kiwicommerce_testimonials::core" action="kiwicommerce_testimonials/items/index" resource="KiwiCommerce_Testimonials::items"/>
+        <add id="kiwicommerce_testimonials::core" title="KiwiCommerce" module="KiwiCommerce_Testimonials" sortOrder="90" resource="KiwiCommerce_Testimonials::sample"/>
+        <add id="kiwicommerce_testimonials::test" title="Testimonials" module="KiwiCommerce_Testimonials" sortOrder="10" parent="kiwicommerce_testimonials::core" action="kiwicommerce_testimonials/items/index" resource="KiwiCommerce_Testimonials::items"/>
     </menu>
 </config>

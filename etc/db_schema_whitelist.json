@@ -1,0 +1,75 @@
+{
+    "table": "kiwicommerce_testimonials",
+    "columns": [
+        {
+            "name": "testimonial_id",
+            "type": "int",
+            "auto_increment": true,
+            "primary": true
+        },
+        {
+            "name": "company_name",
+            "type": "varchar",
+            "length": 255,
+            "nullable": true
+        },
+        {
+            "name": "name",
+            "type": "varchar",
+            "length": 255,
+            "nullable": true
+        },
+        {
+            "name": "message",
+            "type": "text",
+            "nullable": true
+        },
+        {
+            "name": "post",
+            "type": "varchar",
+            "length": 255,
+            "nullable": true
+        },
+        {
+            "name": "profile_pic",
+            "type": "varchar",
+            "length": 255,
+            "nullable": true
+        },
+        {
+            "name": "status",
+            "type": "smallint",
+            "default": 0,
+            "nullable": false
+        },
+        {
+            "name": "created_at",
+            "type": "timestamp",
+            "default": "CURRENT_TIMESTAMP",
+            "nullable": false
+        },
+        {
+            "name": "updated_at",
+            "type": "timestamp",
+            "default": "CURRENT_TIMESTAMP",
+            "on_update": true,
+            "nullable": false
+        }
+    ],
+    "kiwicommerce_testimonials": {
+        "column": {
+            "testimonial_id": true,
+            "company_name": true,
+            "name": true,
+            "message": true,
+            "post": true,
+            "profile_pic": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

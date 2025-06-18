@@ -11,6 +11,6 @@ class Crudimage extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct(): void
     {
-        $this->_init('kiwicommerce_testimonials', 'crudimage_id'); // "kiwicommerce_testimonials" is table name, "crudimage_id" is the primary key
+        $this->_init('kiwicommerce_testimonials', 'testimonial_id');
     }
 }

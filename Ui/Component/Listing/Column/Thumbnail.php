@@ -47,16 +47,38 @@ class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
                 \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
             );
             foreach ($dataSource['data']['items'] as &$item) {
-                if (!empty($item['image'])) {
-                    $item[$fieldName . '_src'] = $path . $item['image'];
+                if (!empty($item['profile_pic'])) {
+                    $item[$fieldName . '_src'] = $path . $item['profile_pic'];
                     $item[$fieldName . '_alt'] = $item['title'] ?? '';
-                    $item[$fieldName . '_orig_src'] = $path . $item['image'];
+                    $item[$fieldName . '_orig_src'] = $path . $item['profile_pic'];
                 } else {
-                    // please place your placeholder image at pub/media/kiwicommerce/testimonials/placeholder/placeholder.jpg
-                    $placeholder = 'kiwicommerce/testimonials/placeholder/placeholder.jpg';
-                    $item[$fieldName . '_src'] = $path . $placeholder;
-                    $item[$fieldName . '_alt'] = 'Place Holder';
-                    $item[$fieldName . '_orig_src'] = $path . $placeholder;
+                    $placeholder = 'kiwicommerce/testimonials/placeholder/placeholder.png';
+                    // Download placeholder.jpg if it does not exist
+                    $placeholderPath = BP . '/pub/media/' . $placeholder;
+                    if (!file_exists($placeholderPath)) {
+                        $placeholderDir = dirname($placeholderPath);
+                        if (!is_dir($placeholderDir)) {
+                            mkdir($placeholderDir, 0775, true);
+                        }
+                        // Download a sample placeholder image from a public domain source
+                        $imageUrl = 'https://placehold.co/600x400/png';
+                        file_put_contents($placeholderPath, file_get_contents($imageUrl));
+                    }
+                    $mediaDir = BP . '/pub/media/';
+                    if (!is_dir(dirname($mediaDir . $placeholder))) {
+                        mkdir(dirname($mediaDir . $placeholder), 0775, true);
+                    }
+                    $placeholderPath = $mediaDir . $placeholder;
+                    if (!file_exists($placeholderPath)) {
+                        // Optionally, you can log a warning or copy a default image here
+                        $item[$fieldName . '_src'] = '';
+                        $item[$fieldName . '_alt'] = 'No Image';
+                        $item[$fieldName . '_orig_src'] = '';
+                    } else {
+                        $item[$fieldName . '_src'] = $path . $placeholder;
+                        $item[$fieldName . '_alt'] = 'Place Holder';
+                        $item[$fieldName . '_orig_src'] = $path . $placeholder;
+                    }
                 }
             }
         }

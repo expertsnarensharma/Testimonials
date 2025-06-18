@@ -68,25 +68,43 @@ class Main extends Generic implements TabInterface
         $form->setHtmlIdPrefix('item_');
         $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Item Information')]);
         if ($model->getId()) {
-            $fieldset->addField('crudimage_id', 'hidden', ['name' => 'crudimage_id']);
+            $fieldset->addField('testimonial_id', 'hidden', ['name' => 'testimonial_id']);
         }
         $fieldset->addField(
-            'title',
+            'company_name',
             'text',
-            ['name' => 'title', 'label' => __('Title'), 'title' => __('Title'), 'required' => true]
+            ['name' => 'company_name', 'label' => __('Company'), 'title' => __('Company'), 'required' => true]
         );
         $fieldset->addField(
-            'author',
+            'name',
             'text',
-            ['name' => 'author', 'label' => __('Author'), 'title' => __('Author'), 'required' => true]
+            ['name' => 'name', 'label' => __('Name'), 'title' => __('Name'), 'required' => true]
         );
         $fieldset->addField(
-            'image',
+            'message',
+            'editor',
+            [
+                'name' => 'message',
+                'label' => __('Message'),
+                'title' => __('Message'),
+                'style' => 'height:26em;',
+                'required' => true,
+                'config'    => $this->_wysiwygConfig->getConfig(),
+                'wysiwyg' => true
+            ]
+        );
+        $fieldset->addField(
+            'post',
+            'text',
+            ['name' => 'post', 'label' => __('Post'), 'title' => __('Post'), 'required' => true]
+        );
+        $fieldset->addField(
+            'profile_pic',
             'image',
             [
-                'name' => 'image',
-                'label' => __('Image'),
-                'title' => __('Image'),
+                'name' => 'profile_pic',
+                'label' => __('Profile'),
+                'title' => __('Profile'),
                 'required'  => false
             ]
         );
@@ -94,19 +112,6 @@ class Main extends Generic implements TabInterface
             'status',
             'select',
             ['name' => 'status', 'label' => __('Status'), 'title' => __('Status'),  'options'   => [0 => 'Disable', 1 => 'Enable'], 'required' => true]
-        );
-        $fieldset->addField(
-            'content',
-            'editor',
-            [
-                'name' => 'content',
-                'label' => __('Content'),
-                'title' => __('Content'),
-                'style' => 'height:26em;',
-                'required' => true,
-                'config'    => $this->_wysiwygConfig->getConfig(),
-                'wysiwyg' => true
-            ]
         );
         
         $form->setValues($model->getData());

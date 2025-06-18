@@ -1,31 +1,42 @@
 <?php
     $singleData = $block->getSingleData();
+
+    //echo "<pre>"; print_r($singleData); echo "</pre>";die;
 ?>
+<?php if (is_object($singleData)): ?>
 <div>
-    <h3>Title</h3>
-    <p><?php echo $singleData->getTitle(); ?></p>   
+    <h3>Company</h3>
+    <p><?php echo $singleData->getCompanyName(); ?></p>   
 </div>
 <div>
-    <h3>Author</h3>
-    <p><?php echo $singleData->getAuthor(); ?></p>
+    <h3>Name</h3>
+    <p><?php echo $singleData->getName(); ?></p>   
 </div>
+
 <div>
-    <h3>Content</h3>
+    <h3>Message</h3>
     <?php if ($block->getFilterProvider() && $block->getFilterProvider()->getPageFilter()): ?>
-        <p><?php echo $block->getFilterProvider()->getPageFilter()->filter($singleData->getContent()); ?></p>
+        <p><?php echo $block->getFilterProvider()->getPageFilter()->filter($singleData->getMessage()); ?></p>
     <?php else: ?>
-        <p><?php echo $singleData->getContent(); ?></p>
+        <p><?php echo $singleData->getMessage(); ?></p>
     <?php endif; ?>
 </div>
 <div>
-	<h3>Image</h3>
-	<?php if($singleData->getImage()): ?>
-        <img width="400" height="300" src="<?php echo $block->escapeUrl($block->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'media/' . ltrim($singleData->getImage(), '/')); ?>" alt="<?php echo $block->escapeHtml($singleData->getTitle()); ?>">
+    <h3>Post</h3>
+    <p><?php echo $singleData->getPost(); ?></p>
+</div>
+<div>
+    <h3>Profile Pic</h3>
+    <?php if($singleData->getProfilePic()): ?>
+        <img width="400" height="300" src="<?php echo $block->escapeUrl($block->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'media/' . ltrim($singleData->getProfilePic(), '/')); ?>" alt="<?php echo $block->escapeHtml($singleData->getName()); ?>">
     <?php else: ?>
-        <p>No Image</p>
+        <p>No Profile Pic</p>
     <?php endif; ?>
 </div>
 <div>
     <h3>Date</h3>
     <p><?php echo $singleData->getCreatedAt(); ?></p>
 </div>
+<?php else: ?>
+    <p>No testimonial found.</p>
+<?php endif; ?>

@@ -4,12 +4,14 @@
         <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
     <?php endif ?>
     <table class="data table" id="crudimage-data-table">
-        <caption class="table-caption">KiwiCommerce Crudimage Data</caption>
+        <caption class="table-caption">KiwiCommerce Testimonial Data</caption>
         <thead>
             <tr>
-                <th scope="col" class="col title">Title</th>
-                <th scope="col" class="col author">Author</th>
-                <th scope="col" class="col image">Image</th>
+                <th scope="col" class="col Company">Company</th>
+                <th scope="col" class="col name">Name</th>
+                <th scope="col" class="col message">Message</th>
+                <th scope="col" class="col post">Post</th>
+                <th scope="col" class="col profile_pic">Profile Pic</th>
                 <th scope="col" class="col created_at">Created At</th>
                 <th scope="col" class="col actions">Action</th>
             </tr>
@@ -17,20 +19,21 @@
         <tbody>
             <?php foreach ($collection as $key => $data): ?>
                 <tr>
-                    <td data-th="Title" class="col title"><?php echo $data->getTitle(); ?></td>
-                    <td data-th="Author" class="col author"><?php echo $data->getAuthor(); ?></td>
-                    <td data-th="Image" class="col image">
-                        <?php $image = $data->getImage(); ?>
+                    <td data-th="Company" class="col company"><?php echo $data->getCompanyName(); ?></td>
+                    <td data-th="Name" class="col name"><?php echo $data->getName(); ?></td>
+                    <td data-th="Message" class="col message"><?php echo $data->getMessage(); ?></td>
+                    <td data-th="Post" class="col post"><?php echo $data->getPost(); ?></td>
+                    <td data-th="Profile" class="col profile_pic">
+                        <?php $image = $data->getProfilePic(); ?>
                         <?php if (!empty($image)): ?>
                             <img width="70" height="70" src="<?php echo htmlspecialchars($block->getBaseUrl() . 'media/' . ltrim((string)$image, '/'), ENT_QUOTES, 'UTF-8'); ?>" alt="Image">
                         <?php else: ?>
-                            <p>No Image</p>
+                            <p>No Profile Pic</p>
                         <?php endif; ?>
                     </td>
                     <td data-th="Date" class="col created_at"><?php echo $data->getCreatedAt(); ?></td>
                     <td data-th="Actions" class="col actions">
-                        <?php $id = ($data->getCrudimageId()) ? $data->getCrudimageId() : $data['crudimage_id']; ?>
-                        <!-- "$data->getTesting13Id()" was not working when I generated Vky_Testing13 module. That's why I had to place above line. -->
+                        <?php $id = ($data->getTestimonialId()) ? $data->getTestimonialId() : $data['testimonial_id']; ?>
                         <a href="<?php echo $block->getBaseUrl().'crudimage/index/view/id/'.$id; ?>" class="action view">
                             <span>View</span>
                         </a>
