@@ -1,0 +1,24 @@
+<?php
+/** @var \KiwiCommerce\Testimonials\Block\Widget\Testimonials $block */
+$testimonials = $block->getTestimonials();
+?>
+
+<div class="testimonial-widget">
+    <?php if ($block->getTitle()): ?>
+        <h2><?php echo $block->escapeHtml($block->getTitle()) ?></h2>
+    <?php endif; ?>
+
+    <?php foreach ($testimonials as $testimonial): ?>
+        <div class="testimonial-item">
+            <div class="testimonial-content">
+                <?php echo $this->escapeHtml($testimonial->getMessage()) ?>
+            </div>
+            <div class="testimonial-author">
+                — <?php echo $this->escapeHtml($testimonial->getName()) ?>
+                <?php if ($testimonial->getCompanyName()): ?>
+                    (<?php echo $this->escapeHtml($testimonial->getCompanyName()) ?>)
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
